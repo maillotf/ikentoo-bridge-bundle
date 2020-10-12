@@ -1,0 +1,25 @@
+services:
+    ikentoo.manager.config:
+        class: MaillotF\Ikentoo\IkentooBridgeBundle\Manager\Config
+        arguments:
+            - "%ikentoo.authentication.protocol%"
+            - "%ikentoo.authentication.host%"
+            - "%ikentoo.authentication.port%"
+            - "%ikentoo.authentication.token%"
+    ikentoo.manager.manager:
+        class: MaillotF\Ikentoo\IkentooBridgeBundle\Manager\Manager
+        arguments:
+            - "@ikentoo.manager.config"
+    ikentoo.service.financial:
+        class: MaillotF\Ikentoo\IkentooBridgeBundle\Service\FinancialService
+        arguments:
+            - "@ikentoo.manager.manager"
+    ikentoo.service.orderandpayment:
+        class: MaillotF\Ikentoo\IkentooBridgeBundle\Service\OrderAndPaymentService
+        arguments:
+            - "@ikentoo.manager.manager"
+    ikentoo.service.main:
+        class: MaillotF\Ikentoo\IkentooBridgeBundle\Service\IkentooService
+        arguments:
+            - "@ikentoo.service.financial"
+            - "@ikentoo.service.orderandpayment"

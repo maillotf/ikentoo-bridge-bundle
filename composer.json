@@ -1,0 +1,26 @@
+{
+    "name": "maillotf/ikentoo-bridge-bundle",
+    "type": "symfony-bundle",
+    "description": "An ikentoo bundle for Symfony",
+    "keywords": ["ikentoo", "bridge", "symfony"],
+    "homepage": "https://github.com/maillotf/ikentoo-bridge-bundle",
+    "license": "MIT",
+    "authors": [{
+        "name": "Flavien Maillot",
+        "email": "contact@webcomputing.fr"
+    }],
+    "require": {
+        "php": "^7.1",
+        "symfony/http-kernel": "^3.2|^4.0|^4.1|^5.1",
+		"symfony/config": "^3.2|^4.0|^4.1|^5.1",
+		"symfony/dependency-injection": "^3.2|^4.0|^4.1|^5.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
+    },
+    "autoload": {
+        "psr-4": { 
+			"MaillotF\\Ikentoo\\IkentooBridgeBundle\\": "src/" 
+		}
+    }
+}
